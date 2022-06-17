@@ -23,3 +23,7 @@ s
 ### Steps
 - Build using `./gradlew :nativeCompile`
 - Run using `./build/native/nativeCompile/spring-boot-kotlin-reactive-example `
+
+### Future Plans
+- Use `kotlinx.serialization` instead of jackson
+  - Currently, not working with native-image (dependencies commented out for now)

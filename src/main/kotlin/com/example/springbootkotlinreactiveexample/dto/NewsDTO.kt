@@ -15,3 +15,16 @@ data class NewsDTO(
 fun NewsDTO.toData(): News {
     return News(id, title, text, url, imageUrl)
 }
+
+// Kotlin Serialization Version
+//import kotlinx.serialization.SerialName
+//import kotlinx.serialization.Serializable
+//@Serializable
+//data class NewsDTO(
+//    val id: Long = 0,
+//    val title: String,
+//    val text: String,
+//    val url: String,
+//    @SerialName("image_url")
+//    val imageUrl: String? = null
+//)

@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
 val kotlin_version by extra { "1.7.0" }
+val kotlin_serialization_version by extra { "1.3.3" }
 
 plugins {
 	id("org.springframework.boot") version "2.7.0"
@@ -10,6 +11,7 @@ plugins {
 
 	kotlin("jvm") version "1.7.0"
 	kotlin("plugin.spring") version "1.7.0"
+//	kotlin("plugin.serialization") version "1.7.0"
 }
 
 group = "com.example"
@@ -35,6 +37,8 @@ dependencies {
 //	runtimeOnly("org.postgresql:r2dbc-postgresql")
 
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+//	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlin_serialization_version")
+
 
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
