@@ -1,0 +1,20 @@
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        data:
+#          r2dbc: DEBUG
+#
+#spring:
+#  main:
+#    allow-bean-definition-overriding: true
+#  r2dbc:
+#    name: sa
+#    password:
+#    url: r2dbc:h2:mem:///pocdb?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#    initialization-mode: always
+
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
