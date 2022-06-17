@@ -62,6 +62,11 @@ tasks.withType<Test> {
 	useJUnitPlatform()
 }
 
+// Comment on for AOT when using spring boot run
+//tasks.getByName<BootRun>("bootRun") {
+//	systemProperty("springAot", "true")
+//}
+
 tasks.withType<BootBuildImage> {
 	builder = "paketobuildpacks/builder:tiny"
 	environment = mapOf("BP_NATIVE_IMAGE" to "true") // enable native image support

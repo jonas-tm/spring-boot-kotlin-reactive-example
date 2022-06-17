@@ -1,4 +1,4 @@
-package com.example.springbootkotlinreactive.dto
+package com.example.springbootkotlinreactiveexample.dto
 
 data class ErrorDTO(
     val msg: String,

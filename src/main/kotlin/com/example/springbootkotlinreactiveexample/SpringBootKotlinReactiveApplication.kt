@@ -1,4 +1,4 @@
-package com.example.springbootkotlinreactive
+package com.example.springbootkotlinreactiveexample
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

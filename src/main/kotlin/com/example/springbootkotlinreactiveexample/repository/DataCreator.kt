@@ -1,8 +1,6 @@
-package com.example.springbootkotlinreactive.repository
+package com.example.springbootkotlinreactiveexample.repository
 
-import com.example.springbootkotlinreactive.data.News
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.example.springbootkotlinreactiveexample.data.News
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
 import org.springframework.boot.ApplicationArguments
@@ -17,9 +15,7 @@ data class DataCreator(
     private val logger = LoggerFactory.getLogger(javaClass)
 
     override fun run(args: ApplicationArguments?) = runBlocking<Unit> {
-        launch(Dispatchers.Default) {
-            repository.save(News(0, "News 1", "Sample text of news one", "no url"))
-            logger.info("Added initial news to database")
-        }
+        repository.save(News(0, "News 1", "Sample text of news one", "no url"))
+        logger.info("Added initial news to database")
     }
 }

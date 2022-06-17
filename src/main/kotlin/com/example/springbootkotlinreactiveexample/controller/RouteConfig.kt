@@ -1,4 +1,4 @@
-package com.example.springbootkotlinreactive.controller
+package com.example.springbootkotlinreactiveexample.controller
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

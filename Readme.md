@@ -6,6 +6,7 @@ This repository contains a simple example Spring Boot Webserver using reactive A
 - Spring Webflux (reactive REST endpoints)
 - Spring Data R2DBC (reactive database access)
 - H2 in memory database
+- Spring Native GraalVM builds
 - Routes defined with Kotlin DSL (`RouteConfig.kt`)
 
 ### Endpoints
@@ -13,5 +14,12 @@ This repository contains a simple example Spring Boot Webserver using reactive A
 - **GET**  `/api/v1/news/{id}` -> Get specific news entry by id from database
 - **POST** `/api/v1/news` -> Add news entry to database
 
-### Known issues
-- Spring Native: Server is currently not working correctly when compiled to native-image
+## Build & Run native image
+
+### Requirements
+- GraalVM installed and set as environment variable `JAVA_HOME` (sdkman easiest variant)
+- native-image installed (use `gu`) and reachable
+s
+### Steps
+- Build using `./gradlew :nativeCompile`
+- Run using `./build/native/nativeCompile/spring-boot-kotlin-reactive-example `

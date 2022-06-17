@@ -1,6 +1,6 @@
-package com.example.springbootkotlinreactive.data
+package com.example.springbootkotlinreactiveexample.data
 
-import com.example.springbootkotlinreactive.dto.NewsDTO
+import com.example.springbootkotlinreactiveexample.dto.NewsDTO
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table

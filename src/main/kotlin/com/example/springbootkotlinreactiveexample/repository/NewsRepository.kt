@@ -1,6 +1,6 @@
-package com.example.springbootkotlinreactive.repository
+package com.example.springbootkotlinreactiveexample.repository
 
-import com.example.springbootkotlinreactive.data.News
+import com.example.springbootkotlinreactiveexample.data.News
 import kotlinx.coroutines.flow.Flow
 import org.springframework.data.repository.kotlin.CoroutineCrudRepository
 

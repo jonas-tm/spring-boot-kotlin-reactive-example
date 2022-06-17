@@ -1,6 +1,6 @@
-package com.example.springbootkotlinreactive.dto
+package com.example.springbootkotlinreactiveexample.dto
 
-import com.example.springbootkotlinreactive.data.News
+import com.example.springbootkotlinreactiveexample.data.News
 import com.fasterxml.jackson.annotation.JsonProperty
 
 data class NewsDTO(

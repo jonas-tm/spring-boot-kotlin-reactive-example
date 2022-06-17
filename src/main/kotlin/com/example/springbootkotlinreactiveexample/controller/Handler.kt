@@ -1,10 +1,10 @@
-package com.example.springbootkotlinreactive.controller
+package com.example.springbootkotlinreactiveexample.controller
 
-import com.example.springbootkotlinreactive.data.toDTO
-import com.example.springbootkotlinreactive.dto.ErrorDTO
-import com.example.springbootkotlinreactive.dto.NewsDTO
-import com.example.springbootkotlinreactive.dto.toData
-import com.example.springbootkotlinreactive.repository.NewsRepository
+import com.example.springbootkotlinreactiveexample.data.toDTO
+import com.example.springbootkotlinreactiveexample.dto.ErrorDTO
+import com.example.springbootkotlinreactiveexample.dto.NewsDTO
+import com.example.springbootkotlinreactiveexample.dto.toData
+import com.example.springbootkotlinreactiveexample.repository.NewsRepository
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.reactive.awaitSingle
 import org.slf4j.LoggerFactory

@@ -1,9 +1,9 @@
-package com.example.springbootkotlinreactive.controller
+package com.example.springbootkotlinreactiveexample.controller
 
-import com.example.springbootkotlinreactive.data.News
-import com.example.springbootkotlinreactive.data.toDTO
-import com.example.springbootkotlinreactive.dto.NewsDTO
-import com.example.springbootkotlinreactive.repository.NewsRepository
+import com.example.springbootkotlinreactiveexample.data.News
+import com.example.springbootkotlinreactiveexample.data.toDTO
+import com.example.springbootkotlinreactiveexample.dto.NewsDTO
+import com.example.springbootkotlinreactiveexample.repository.NewsRepository
 import com.ninjasquad.springmockk.MockkBean
 import io.mockk.coEvery
 import kotlinx.coroutines.flow.flowOf
