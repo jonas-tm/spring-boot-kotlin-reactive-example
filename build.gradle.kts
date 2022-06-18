@@ -11,7 +11,7 @@ plugins {
 
 	kotlin("jvm") version "1.7.0"
 	kotlin("plugin.spring") version "1.7.0"
-//	kotlin("plugin.serialization") version "1.7.0"
+	kotlin("plugin.serialization") version "1.7.0"
 }
 
 group = "com.example"
@@ -36,8 +36,8 @@ dependencies {
 //	runtimeOnly("org.postgresql:postgresql")
 //	runtimeOnly("org.postgresql:r2dbc-postgresql")
 
-	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-//	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlin_serialization_version")
+//	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlin_serialization_version")
 
 
 	implementation("org.jetbrains.kotlin:kotlin-reflect")

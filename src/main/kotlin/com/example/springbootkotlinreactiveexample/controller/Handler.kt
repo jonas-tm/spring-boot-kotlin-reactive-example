@@ -34,14 +34,14 @@ class Handler(
             .bodyValue(ErrorDTO(msg = "Invalid news id in path"))
             .awaitSingle()
 
-        val news = repository.findById(id) ?: return ServerResponse
+        val news = repository.findById(id)?.toDTO() ?: return ServerResponse
             .notFound()
             .buildAndAwait()
 
         return ServerResponse
             .ok()
             .contentType(MediaType.APPLICATION_JSON)
-            .bodyValueAndAwait(news.toDTO())
+            .bodyValueAndAwait(news)
     }
 
     suspend fun addNews(req: ServerRequest): ServerResponse {
@@ -53,7 +53,7 @@ class Handler(
         val newsToSave = news.copy(id = 0).toData()
 
         val savedNews = try {
-            repository.save(newsToSave)
+            repository.save(newsToSave).toDTO()
         } catch (e: Exception) {
             log.error("Error saving news", e)
             return ServerResponse
