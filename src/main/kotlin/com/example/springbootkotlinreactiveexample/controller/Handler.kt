@@ -45,10 +45,14 @@ class Handler(
     }
 
     suspend fun addNews(req: ServerRequest): ServerResponse {
-        val news = req.awaitBodyOrNull<NewsDTO>() ?: return ServerResponse
-            .badRequest()
-            .bodyValue(ErrorDTO(msg = "Invalid body"))
-            .awaitSingle()
+        val news = try {
+            req.awaitBody<NewsDTO>()
+        } catch (e: Exception) {
+            return ServerResponse
+                .badRequest()
+                .bodyValue(ErrorDTO(msg = "Invalid body"))
+                .awaitSingle()
+        }
 
         val newsToSave = news.copy(id = 0).toData()
 

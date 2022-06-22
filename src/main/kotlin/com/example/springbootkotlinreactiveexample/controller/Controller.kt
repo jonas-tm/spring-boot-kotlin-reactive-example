@@ -1,5 +1,6 @@
 package com.example.springbootkotlinreactiveexample.controller
 
+import com.example.springbootkotlinreactiveexample.dto.ErrorDTO
 import com.example.springbootkotlinreactiveexample.dto.NewsDTO
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -13,10 +14,14 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/api/v1/news2")
 class Controller{
-
-    @GetMapping
-    suspend fun get(): NewsDTO {
+    @GetMapping("/news")
+    suspend fun news(): NewsDTO {
         return NewsDTO(1, "Hello", "World", "asd")
+    }
+
+    @GetMapping("/error")
+    suspend fun error(): ErrorDTO {
+        return ErrorDTO("asd")
     }
 
 }
