@@ -27,4 +27,5 @@ This repository contains a simple example Spring Boot Webserver using reactive A
 
 ### Known Issues
 - Native image is using Jackson serializer instead of KotlinX
+  - Solved by using traditional Spring Controller with NewsDTO (Spring AOT then scans the class and registers it)
 - Native tests not working due to mock dependencies
