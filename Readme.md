@@ -20,7 +20,11 @@ This repository contains a simple example Spring Boot Webserver using reactive A
 ### Requirements
 - GraalVM installed and set as environment variable `JAVA_HOME` (sdkman easiest variant)
 - native-image installed (use `gu`) and reachable
-s
+
 ### Steps
 - Build using `./gradlew :nativeCompile`
 - Run using `./build/native/nativeCompile/spring-boot-kotlin-reactive-example `
+
+### Known Issues
+- Native image is using Jackson serializer instead of KotlinX
+- Native tests not working due to mock dependencies

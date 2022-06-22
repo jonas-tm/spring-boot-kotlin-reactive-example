@@ -26,31 +26,24 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
+	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 
 	implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
-
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly("io.r2dbc:r2dbc-h2")
 
-//	implementation("org.springframework.boot:spring-boot-starter-security")
-//	runtimeOnly("org.postgresql:postgresql")
-//	runtimeOnly("org.postgresql:r2dbc-postgresql")
-
-//	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlin_serialization_version")
-
 
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
-	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
 	testImplementation("org.springframework.security:spring-security-test")
 
-	// mocks
+	// Mocks
 	testImplementation("io.mockk:mockk:1.12.4")
 	testImplementation("com.ninja-squad:springmockk:3.1.1")
 }
@@ -66,12 +59,12 @@ tasks.withType<Test> {
 	useJUnitPlatform()
 }
 
-// Comment on for AOT when using spring boot run
-//tasks.getByName<BootRun>("bootRun") {
-//	systemProperty("springAot", "true")
-//}
-
 tasks.withType<BootBuildImage> {
 	builder = "paketobuildpacks/builder:tiny"
 	environment = mapOf("BP_NATIVE_IMAGE" to "true") // enable native image support
 }
+
+// Comment in for AOT when using spring boot run
+//tasks.getByName<BootRun>("bootRun") {
+//	systemProperty("springAot", "true")
+//}

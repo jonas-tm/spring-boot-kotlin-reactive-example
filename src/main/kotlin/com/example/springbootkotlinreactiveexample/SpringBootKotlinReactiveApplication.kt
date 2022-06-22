@@ -8,11 +8,10 @@ import org.springframework.boot.runApplication
 import org.springframework.nativex.hint.TypeAccess
 import org.springframework.nativex.hint.TypeHint
 
-@TypeHint(types = [
-	News::class,
-	NewsDTO::class,
-	ErrorDTO::class],
-	access = arrayOf(TypeAccess.DECLARED_CONSTRUCTORS, TypeAccess.PUBLIC_METHODS))
+@TypeHint(
+	types = [News::class, NewsDTO::class, ErrorDTO::class],
+	access = [TypeAccess.DECLARED_CONSTRUCTORS, TypeAccess.PUBLIC_METHODS]
+)
 @SpringBootApplication
 class SpringBootKotlinReactiveApplication
 
