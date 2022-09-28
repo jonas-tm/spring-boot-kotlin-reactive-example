@@ -23,7 +23,7 @@ This repository contains a simple example Spring Boot Webserver using reactive A
 
 ### Steps
 - Build using `./gradlew :nativeCompile`
-- Run using `./build/native/nativeCompile/spring-boot-kotlin-reactive-example `
+- Run using `./build/native/nativeCompile/spring-boot-kotlin-reactive-example`
 
 ### Known Issues
 - Native image is using Jackson serializer instead of KotlinX

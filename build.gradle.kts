@@ -1,17 +1,17 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
-val kotlin_version by extra { "1.7.0" }
-val kotlin_serialization_version by extra { "1.3.3" }
+val kotlin_version = "1.7.10" // also update plugin versions
+val kotlin_serialization_version = "1.4.0"
 
 plugins {
-	id("org.springframework.boot") version "2.7.0"
+	id("org.springframework.boot") version "2.7.1"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
-	id("org.springframework.experimental.aot") version "0.12.0" // includes spring native
+	id("org.springframework.experimental.aot") version "0.12.1" // Includes Spring Native
 
-	kotlin("jvm") version "1.7.0"
-	kotlin("plugin.spring") version "1.7.0"
-	kotlin("plugin.serialization") version "1.7.0"
+	kotlin("jvm") version "1.7.10"
+	kotlin("plugin.spring") version "1.7.10"
+	kotlin("plugin.serialization") version "1.7.10"
 }
 
 group = "com.example"
@@ -44,7 +44,7 @@ dependencies {
 	testImplementation("org.springframework.security:spring-security-test")
 
 	// Mocks
-	testImplementation("io.mockk:mockk:1.12.4")
+	testImplementation("io.mockk:mockk:1.12.8")
 	testImplementation("com.ninja-squad:springmockk:3.1.1")
 }
 
