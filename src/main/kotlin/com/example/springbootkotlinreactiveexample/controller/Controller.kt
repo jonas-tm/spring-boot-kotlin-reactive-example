@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RestController
  * This class is needed to for spring aot to register kotlinx serialization for NewsDTO
  * because the plugin does not detect it when using KotlinDSL for routing
  */
-@RestController
-@RequestMapping("/api/v1/news2")
-class Controller{
-    @GetMapping("/news")
-    suspend fun news(): NewsDTO {
-        return NewsDTO(1, "Hello", "World", "asd")
-    }
-
-    @GetMapping("/error")
-    suspend fun error(): ErrorDTO {
-        return ErrorDTO("asd")
-    }
-
-}
+//@RestController
+//@RequestMapping("/api/v1/news2")
+//class Controller{
+//    @GetMapping("/news")
+//    suspend fun news(): NewsDTO {
+//        return NewsDTO(1, "Hello", "World", "asd")
+//    }
+//
+//    @GetMapping("/error")
+//    suspend fun error(): ErrorDTO {
+//        return ErrorDTO("asd")
+//    }
+//
+//}

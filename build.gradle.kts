@@ -1,17 +1,16 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
-val kotlin_version = "1.7.10" // also update plugin versions
+val kotlin_version = "1.7.21" // also update plugin versions
 val kotlin_serialization_version = "1.4.0"
 
 plugins {
-	id("org.springframework.boot") version "2.7.1"
-	id("io.spring.dependency-management") version "1.0.11.RELEASE"
-	id("org.springframework.experimental.aot") version "0.12.1" // Includes Spring Native
+	id("org.springframework.boot") version "3.0.0-RC2"
+	id("org.graalvm.buildtools.native") version "0.9.17"
+	id("io.spring.dependency-management") version "1.1.0"
 
-	kotlin("jvm") version "1.7.10"
-	kotlin("plugin.spring") version "1.7.10"
-	kotlin("plugin.serialization") version "1.7.10"
+	kotlin("jvm") version "1.7.21"
+	kotlin("plugin.spring") version "1.7.21"
+	kotlin("plugin.serialization") version "1.7.21"
 }
 
 group = "com.example"
@@ -20,6 +19,7 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
 	maven { url = uri("https://repo.spring.io/release") }
+	maven { url = uri("https://repo.spring.io/milestone") }
 	mavenCentral()
 }
 
@@ -58,13 +58,3 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
-
-tasks.withType<BootBuildImage> {
-	builder = "paketobuildpacks/builder:tiny"
-	environment = mapOf("BP_NATIVE_IMAGE" to "true") // enable native image support
-}
-
-// Comment in for AOT when using spring boot run
-//tasks.getByName<BootRun>("bootRun") {
-//	systemProperty("springAot", "true")
-//}
