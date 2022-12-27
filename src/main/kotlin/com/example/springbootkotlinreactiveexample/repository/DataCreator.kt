@@ -16,7 +16,8 @@ data class DataCreator(
 
     private val logger = LoggerFactory.getLogger(javaClass)
 
-    override fun run(args: ApplicationArguments?) = runBlocking<Unit> {
+    override fun run(args: ApplicationArguments?): Unit = runBlocking {
+        // Test coroutine functionality
         launch(Dispatchers.Default) {
             repository.save(News(0, "News 1", "Sample text of news one", "no url"))
             logger.info("Added initial news to database")

@@ -1,13 +1,15 @@
 package com.example.springbootkotlinreactiveexample
 
+import com.example.springbootkotlinreactiveexample.dto.NewsDTO
+import com.example.springbootkotlinreactiveexample.dto.ErrorDTO
+import org.springframework.aot.hint.annotation.RegisterReflectionForBinding
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-
-//@TypeHint(
-//	types = [News::class],
-//	access = [TypeAccess.DECLARED_CONSTRUCTORS, TypeAccess.PUBLIC_METHODS]
-//)
+@RegisterReflectionForBinding(classes = [
+	NewsDTO::class,
+	ErrorDTO::class
+])
 @SpringBootApplication
 class SpringBootKotlinReactiveApplication
 

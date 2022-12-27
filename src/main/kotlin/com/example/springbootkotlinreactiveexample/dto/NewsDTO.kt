@@ -3,9 +3,7 @@ package com.example.springbootkotlinreactiveexample.dto
 import com.example.springbootkotlinreactiveexample.data.News
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import org.springframework.aot.hint.annotation.RegisterReflectionForBinding
 
-@RegisterReflectionForBinding
 @Serializable
 data class NewsDTO(
     val id: Long = 0,
