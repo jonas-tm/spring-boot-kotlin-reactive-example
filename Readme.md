@@ -1,6 +1,6 @@
 # Spring Boot Kotlin Reactive Server Example
 
-This repository contains a simple example Spring Boot Webserver using reactive API's with Kotlin Coroutines.
+This repository contains a simple example Spring Boot 3 web server using reactive API's with Kotlin Coroutines.
 
 ### Used technologies
 - Spring Webflux (reactive REST endpoints)
@@ -8,7 +8,7 @@ This repository contains a simple example Spring Boot Webserver using reactive A
 - H2 in memory database
 - Spring Native GraalVM builds
 - Routes defined with Kotlin DSL (`RouteConfig.kt`)
-- KotlinX Serialization (native not yet working correctly)
+- KotlinX Serialization
 
 ### Endpoints
 - **GET**  `/api/v1/news` -> List all news entries in database
@@ -26,6 +26,4 @@ This repository contains a simple example Spring Boot Webserver using reactive A
 - Run using `./build/native/nativeCompile/spring-boot-kotlin-reactive-example`
 
 ### Known Issues
-- Native image is using Jackson serializer instead of KotlinX
-  - Solved by using traditional Spring Controller with NewsDTO (Spring AOT then scans the class and registers it)
 - Native tests not working due to mock dependencies
